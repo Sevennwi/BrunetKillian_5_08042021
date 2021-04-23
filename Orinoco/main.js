@@ -5,6 +5,9 @@ const camera = document.getElementById('card-container');
 // Appelle API
 
 
+
+
+
 (async function () {
 	const articles = await fetchCameras()
   
@@ -47,13 +50,23 @@ function createCard(article) {
     const price = document.createElement('p')
     price.innerText = Math.ceil (article.price / 1000) + "€"
 	price.className = 'price';
+	const button = document.createElement('a');
+	button.innerText = "Buy";
+	button.type = "button";
+	button.className = 'btn btn-danger button stretched-link';
+	button.href = "Product.html"
+	button.addEventListener ("click", function(){
+		localStorage.setItem("detailCameras", JSON.stringify(article));
+	})
+	
 
 	carte.appendChild(imageUrl);
 	carte.appendChild(name);
 	carte.appendChild(description);
     carte.appendChild(price);
+	carte.appendChild(button);
 	col.appendChild(carte);
 
 	camera.appendChild(col);
-	
 }
+

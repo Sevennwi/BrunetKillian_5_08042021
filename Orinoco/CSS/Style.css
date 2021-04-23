@@ -6,13 +6,39 @@ header {
 }
 
 .logo {
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
 }
 
+.lien:hover {
+    opacity: 0.8;
+}
 
 
+.arrow {
+    transform: translateX(-100%);
+    color: #734C6B;
+}
 
+.basket {
+    transform: translateX(300%);
+    color: #734C6B;
+}
+
+@media screen and (max-width: 1024px) {
+    .basket {
+        transform: translateX(100%);
+        color: #734C6B;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .basket {
+        transform: translateX(50%);
+        margin-bottom: 20px;
+        color: #734C6B;
+    }
+}
 
 
 
@@ -21,7 +47,14 @@ header {
 
 section {
     background-color: #f2f2f2;
+}
+
+.section {
     margin-top: -8px;
+}
+
+h3 {
+    margin-top: 10px;
 }
 
 .carte {
@@ -35,4 +68,52 @@ section {
 }
 
 
+.button {
+    margin: auto;
+    margin: 10px 20px 20px;
+}
+
+#detailProduit {
+    margin-top: -8px;
+}
+
+.produit {
+    max-width: 620px;
+    height: auto;
+    margin: auto;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.div {
+    text-align: center;
+}
+
+.p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
 /* Footer */
+
+footer {
+    background-color: #F3e9f1;
+}
+
+.div-social {
+    margin: auto;
+}
+
+.color {
+    color: black;
+    font-size: 1.5em;
+    margin: 20px 0px;
+}
+
+.social {
+    font-size: 1.4em;
+    margin: 20px auto 50px;
+    color: #734C6B;
+
+}
+
