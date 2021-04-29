@@ -1,13 +1,8 @@
 const camera = document.getElementById('card-container');
+const badge = document.getElementById("Badge");
 
 
-
-// Appelle API
-
-
-
-
-
+//Appelle de la fonction récursive
 (async function () {
 	const articles = await fetchCameras()
   
@@ -17,6 +12,7 @@ const camera = document.getElementById('card-container');
 
 }())
 
+// Appelle API
 
 function fetchCameras() {
 	return fetch("http://localhost:3000/api/cameras/")
@@ -46,7 +42,7 @@ function createCard(article) {
     description.innerText = article.description;
 	const imageUrl = document.createElement("img");
 	imageUrl.src = article.imageUrl;
-	imageUrl.className = 'img-thumbnail img ';
+	imageUrl.className = 'img-thumbnail';
     const price = document.createElement('p')
     price.innerText = Math.ceil (article.price / 1000) + "€"
 	price.className = 'price';
@@ -70,3 +66,14 @@ function createCard(article) {
 	camera.appendChild(col);
 }
 
+
+// Fonction notification panier
+function basketNotif() {
+
+	let basket = JSON.parse(localStorage.getItem("basket"))
+
+	if (basket.length > 0) {
+		badge.innerText = basket.length;
+	}
+}
+basketNotif()

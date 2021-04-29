@@ -14,10 +14,34 @@
 </head>
 <body>
    <header class="container-fluid">
-        <h1 class="text-center"><a href="/Orinoco/index.html" class="lien"><span><i class="fas fa-arrow-left arrow"></i></span><img src="/Orinoco/Logo.png" alt="Logo" class="logo"></a><span><i class="fas fa-shopping-basket basket"></i></span></h1>
+        <h1 class="text-center"><a href="/Orinoco/index.html" class="lien"><span><i class="fas fa-arrow-left arrow"></i></span><img src="/Orinoco/Logo.png" alt="Logo" class="logo"></a><span><i class="fas fa-shopping-basket basket"><span class="badge rounded-pill bg-danger" id="Badge"></span></i></span></h1>
    </header>
 
-   <section class="container" id="detailProduit">
+   <section class="container section" id="shoppingBasket">
+
+     <form id="form" class="col-sm-6 formAdresse">
+          <div class="form-group">
+            <label for="Email">Email address</label>
+            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+
+          <div class="form-group">
+            <label for="Addresse">Addresse</label>
+            <input type="text" class="form-control" id="Addresse" placeholder="Addresse">
+          </div>
+
+          <div class="form-group">
+               <label for="Postcode">Postcode</label>
+               <input type="text" class="form-control" id="Postcode" placeholder="Postcode">
+             </div>
+
+          <div class="form-group">
+               <label for="City">City</label>
+               <input type="text" class="form-control" id="City" placeholder="City">
+          </div>
+
+          <button type="submit" class="btn btn-danger">Buy</button>
+     </form>
 
    </section>
 
@@ -56,6 +80,7 @@
 </footer>
 
 
+   <script src="/Orinoco/basket.js"></script>  
    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
    <script src="https://kit.fontawesome.com/84c38a1056.js" crossorigin="anonymous"></script>
 </body>

@@ -1,3 +1,7 @@
+body {
+    cursor: auto;
+}
+
 
 /* Header */
 
@@ -45,6 +49,8 @@ header {
 
 /* Section */
 
+/*Page principale */
+
 section {
     background-color: #f2f2f2;
 }
@@ -73,6 +79,8 @@ h3 {
     margin: 10px 20px 20px;
 }
 
+/* Détail Produit */
+
 #detailProduit {
     margin-top: -8px;
 }
@@ -85,6 +93,7 @@ h3 {
     text-align: center;
 }
 
+
 .div {
     text-align: center;
 }
@@ -92,6 +101,108 @@ h3 {
 .p {
     font-weight: bold;
     font-size: 1.2em;
+}
+
+/* Panier */
+
+#Badge {
+
+    text-align: baseline;
+    vertical-align: top;
+    font-size: 0.4em;
+    transform: translateX(20%);
+}
+
+ul {
+    max-width: 80%;
+    margin: auto ;
+    text-align: center;
+    margin-bottom: 3%;
+    transform: translateY(10%);
+}
+
+li {
+    padding: 30px 0px;
+}
+
+.img {
+    width: 300px;
+}
+
+.clearBasket {
+    text-align: center;
+    padding: 20px 0px 40px;
+    transform: translateY(20%);
+}
+
+.emptyCart {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+
+.gif {
+    text-align: center;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+
+
+/* formulaire prix */
+
+.price-form {
+    margin: 40px 0px 0px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+
+.value-button {
+    border: 1px solid #ddd;
+    width: 15%;
+    height: 40px;
+    padding: 8px 0px;
+    text-align: center;
+    vertical-align: middle;
+    background: #eee;
+  }
+
+.number {
+      max-width: 30%;
+      height: 40px;
+      text-align: center;
+      border: solid 1px #ddd;
+  }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+  
+.decrease {
+
+    border-radius: 8px 0 0 8px;
+  }
+  
+.increase {
+
+    border-radius: 0 8px 8px 0;
+  }
+
+  .value-button:hover {
+    cursor: pointer;
+  }
+  
+
+
+/* Formulaire Adresse */
+
+.formAdresse {
+    margin: auto;
 }
 
 /* Footer */

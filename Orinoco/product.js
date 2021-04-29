@@ -1,11 +1,10 @@
 const camera = document.getElementById('detailProduit');
+let detailCamera = JSON.parse(localStorage.getItem("detailCameras"))
+const badge = document.getElementById("Badge");
 
 
-
-
+// Creation Cards
 function createCard() {
-
-    let detailCamera = JSON.parse(localStorage.getItem("detailCameras"))
 
 	
 	const col = document.createElement("div");
@@ -18,7 +17,7 @@ function createCard() {
     description.innerText = detailCamera.description;
 	const imageUrl = document.createElement("img");
 	imageUrl.src = detailCamera.imageUrl;
-	imageUrl.className = 'img-thumbnail img ';
+	imageUrl.className = 'img-thumbnail';
     const price = document.createElement('p')
     price.innerText = Math.ceil (detailCamera.price / 1000) + "€"
 	price.className = 'price';
@@ -28,10 +27,39 @@ function createCard() {
 	const lensesSizes = document.createElement("p");
 	lensesSizes.innerText = "Select a lens size"
 	lensesSizes.className = "p"
-	const button = document.createElement('button');
+	const button = document.createElement('a');
 	button.innerText = "Buy";
 	button.type = "button";
 	button.className = 'btn btn-danger button';
+	button.href = "Basket.html"
+
+	// Achat envoyer dans le panier
+	button.addEventListener ("click", function(){
+
+
+			function getBasket (){
+			// Get the existing data
+			var basket = localStorage.getItem('basket');
+
+			// If no existing data, create an array
+			// Otherwise, convert the localStorage string to an array
+			basket = basket ? JSON.parse(basket) : [];
+
+			// Add new data to localStorage Array
+			basket.push(detailCamera);
+
+			// Save back to localStorage
+			localStorage.setItem('basket', JSON.stringify(basket));
+		
+			}
+			getBasket()
+
+
+
+	})
+
+
+	// Selection des Lenses
 	const select = document.createElement('select');
 	select.className = "button"
 	const lenses = detailCamera.lenses;
@@ -59,3 +87,15 @@ function createCard() {
 }
 
 createCard()
+
+
+// Fonction notification panier
+function basketNotif() {
+
+	let basket = JSON.parse(localStorage.getItem("basket"))
+
+	if (basket.length > 0) {
+		badge.innerText = basket.length;
+	}
+}
+basketNotif()
