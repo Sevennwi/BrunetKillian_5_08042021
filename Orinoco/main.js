@@ -33,7 +33,7 @@ function fetchCameras() {
 function createCard(article) {
 	
 	const col = document.createElement("div");
-    col.className = 'col-sm-4';
+    col.className = 'col-md-4';
 	const carte = document.createElement('div');
 	carte.className = 'card carte';
 	const name = document.createElement("h3");

@@ -201,9 +201,82 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Formulaire Adresse */
 
+.formTitle {
+    text-align: center;
+    font-weight: bold;
+    margin: 40px 0px 30px;
+}
+
 .formAdresse {
     margin: auto;
 }
+
+.payment {
+    text-align: center;
+    font-weight: bold;
+    margin: 40px 0px 20px;
+}
+
+.radio {
+    margin: 10px;
+}
+
+.buy {
+    text-align: center;
+    padding: 20px 0px 40px;
+}
+
+.totalPrice {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+
+
+
+/* Confirmation */
+
+.confirm {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 40px 0px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.orderNumber {
+    font-weight: bold;
+}
+
+.imgNyan {
+    max-width: 400px;
+    border-radius: 40px;
+}
+
+.summary {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
+.imgConfirm {
+    width: 150px;
+}
+
+.texteConfirm {
+    font-size: 1em;
+}
+
+.totalPriceConfirm {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 20px 0px 40px;
+    margin-bottom: 0px;
+}
+
 
 /* Footer */
 

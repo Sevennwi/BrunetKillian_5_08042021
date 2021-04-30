@@ -1,6 +1,6 @@
 const shopBasket = document.getElementById("shoppingBasket");
 const badge = document.getElementById("Badge");
-const form = document.getElementById('form')
+const formBuy = document.getElementById('formBuy')
 
 let basket = JSON.parse(localStorage.getItem("basket"))
 
@@ -20,11 +20,13 @@ function createCard() {
 		const img = document.createElement('img')
 		img.className = "img-fluid"
 		img.src = "/Orinoco/Image/giphy.gif"
+		img.alt = "Pulp-Fiction"
 
 		div.appendChild(p);
 		div.appendChild(img);
 
 		shopBasket.appendChild(div);
+		shopBasket.removeChild(formBuy);
 	}
 
 		// boucle pour lister les éléments dans le panier
@@ -107,6 +109,16 @@ function createCard() {
 			totalPrice.innerText = price.innerText * input.value + "€"
 		}
 
+			totalPriceForm = totalPrice.innerText
+			let price54 = ''
+			let numb = totalPriceForm.match(/\d/g);
+			numb = numb.join("");
+			price54 += numb
+
+			document.querySelector('p.totalPrice').textContent = "Total price : " + price54
+	
+			
+		
 		//Supprimer item en  double ?
 
 		/*if (basket[i]._id === basket[i]._id && basket.length > 1 ) {
@@ -152,7 +164,8 @@ function createCard() {
 		div.appendChild(clearBasket);
 	}
 	
-	shopBasket.appendChild(form);
+	
+	shopBasket.appendChild(formBuy);
 }
 
 createCard()

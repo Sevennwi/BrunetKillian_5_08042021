@@ -19,28 +19,78 @@
 
    <section class="container section" id="shoppingBasket">
 
-     <form id="form" class="col-sm-6 formAdresse">
+     <form id="formBuy" class="col-sm-6 formAdresse">
+          <p class="formTitle">Fill in your details below to purchase your products</p>
+          <div class="row">
+               <div class="form-group col-sm-6">
+                    <label for="Lastname">Last name</label>
+                    <input type="text" class="form-control" id="Lastname" placeholder="Enter last name" required>
+               </div>
+
+               <div class="form-group col-sm-6">
+                    <label for="Firstname">First name</label>
+                    <input type="text" class="form-control" id="Firstname" placeholder="Enter first name" required>
+               </div>
+          </div>
+
           <div class="form-group">
             <label for="Email">Email address</label>
-            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email" required>
           </div>
 
           <div class="form-group">
             <label for="Addresse">Addresse</label>
-            <input type="text" class="form-control" id="Addresse" placeholder="Addresse">
+            <input type="text" class="form-control" id="Addresse" placeholder="Enter addresse" required>
           </div>
 
-          <div class="form-group">
-               <label for="Postcode">Postcode</label>
-               <input type="text" class="form-control" id="Postcode" placeholder="Postcode">
+          <div class="row">
+               <div class="form-group col-sm-6">
+                    <label for="Postcode">Postcode</label>
+                    <input type="text" class="form-control" id="Postcode" placeholder="Enter postcode" required>
+               </div>
+
+               <div class="form-group col-sm-6">
+                    <label for="City">City</label>
+                    <input type="text" class="form-control" id="City" placeholder="Enter city" required>
+               </div>
+          </div>
+
+          <p class="payment">Choose a payment method</p>
+          <div class="row radio">
+              <div class="form-check col-sm-3">
+               <input class="form-check-input" type="radio" name="payment" id="Radio1" value="Bitcoin" required>
+               <label class="form-check-label" for="Radio1">
+                 Bitcoin
+               </label>
+             </div>
+             <div class="form-check col-sm-3">
+               <input class="form-check-input" type="radio" name="payment" id="Radio2" value="Ethereum" required>
+               <label class="form-check-label" for="Radio2">
+               Ethereum
+               </label>
+             </div>
+             <div class="form-check col-sm-3">
+               <input class="form-check-input" type="radio" name="payment" id="Radio3" value="Ajax" required>
+               <label class="form-check-label" for="Radio3">
+                 Ajax
+               </label>
+             </div>
+             <div class="form-check col-sm-3">
+               <input class="form-check-input" type="radio" name="payment" id="Radio4" value="Dogecoin" required>
+               <label class="form-check-label" for="Radio4">
+               Dogecoin
+               </label>
              </div>
 
-          <div class="form-group">
-               <label for="City">City</label>
-               <input type="text" class="form-control" id="City" placeholder="City">
           </div>
 
-          <button type="submit" class="btn btn-danger">Buy</button>
+          <p class="totalPrice"></p>
+
+          <div class="buy">
+              <button type="submit" class="btn btn-danger">Buy</button>
+              <a href="Confirmation.html"> Cliquer</a>
+          </div>
+
      </form>
 
    </section>
