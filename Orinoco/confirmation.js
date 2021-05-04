@@ -53,11 +53,24 @@ function createCard() {
 		confirmation.appendChild(ul);
 
 
-        let totalPrice = Math.ceil (confirmationBasket[i].price / 1000)
+        let totalPrice = [] 
+		totalPrice = Math.ceil (confirmationBasket[i].price / 1000)
+		
+		console.log(totalPrice)  
+		
+		let totalPriceProduct = 0
 
-        console.log(totalPrice)
+				for(let j = 0 ; j < totalPrice.length; j++) { 
+               
 
-        document.querySelector('p.totalPriceConfirm').textContent = "Total price : " + totalPrice
+				totalPriceProduct += Number(totalPrice[j]);
+				}
+				
+
+
+
+        document.querySelector('p.totalPriceConfirm').textContent = "Total price : " + totalPriceProduct
+
 
     }
 

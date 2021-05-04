@@ -50,22 +50,30 @@ function createCard() {
 		const divNumber = document.createElement('div')
 		divNumber.className = "row price-form justify-content-center"
 		const price = document.createElement('p')
-		price.innerText = Math.ceil (basket[i].price / 1000)
+		let priceProduct = Math.ceil (basket[i].price / 1000)
+		price.innerText = priceProduct + "€"
 		const totalPrice = document.createElement ('p')
-		totalPrice.innerText = price.innerText + '€'
-		totalPrice.className = "col-sm-4 price"
+		totalPrice.innerText = price.innerText
+		totalPrice.className = "col-sm-3 price"
+		const trashCan = document.createElement('a')
+		trashCan.className = 'col-sm-3 trashCan'
+		trashCan.innerHTML = '<i class="fas fa-trash-alt"></i>'
+		trashCan.addEventListener ("click", function(){
+			basket.splice(i, 1);
+			localStorage.setItem('basket',JSON.stringify(basket));
+			window.location.reload()
+			})
 
 
 		// Form price
 
 		const form = document.createElement('form')
-		form.className = 'col-sm-4 row form'
+		form.className = 'col-sm-3 row form'
 		form.setAttribute("onSubmit", 'return false;') 
 
-		const input = document.createElement('input')
+		const input = document.createElement('span')
 		input.className = "number"
-		input.type = "number"
-		input.setAttribute("value", "1")
+		input.innerText = "1"
 
 		
 		const divFormDecrease = document.createElement('div')
@@ -91,7 +99,15 @@ function createCard() {
 			value > 9 ? value = 9 : value;
 			value++;
 			input.value = value;
-			totalPrice.innerText = price.innerText * input.value + "€"
+			input.innerText = value;
+
+			let totalPricePerProduct = priceProduct * input.value
+			totalPrice.innerText = totalPricePerProduct + '€'
+			let totalPriceForm = 0
+			totalPriceForm = totalPricePerProduct + totalPriceForm
+			console.log(totalPriceForm)
+
+			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPriceForm
 		}
 		
 		function decreaseValue() {
@@ -106,27 +122,18 @@ function createCard() {
 				window.location.reload()
 			}
 			input.value = value;
-			totalPrice.innerText = price.innerText * input.value + "€"
+			input.innerText = value;
+
+			let totalPricePerProduct = priceProduct * input.value
+			totalPrice.innerText = totalPricePerProduct + '€'
+			let totalPriceForm = 0
+			totalPriceForm = totalPricePerProduct + totalPriceForm
+			console.log(totalPriceForm)
+
+			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPriceForm
 		}
 
-			totalPriceForm = totalPrice.innerText
-			let price54 = ''
-			let numb = totalPriceForm.match(/\d/g);
-			numb = numb.join("");
-			price54 += numb
-
-			document.querySelector('p.totalPrice').textContent = "Total price : " + price54
-	
-			
-		
-		//Supprimer item en  double ?
-
-		/*if (basket[i]._id === basket[i]._id && basket.length > 1 ) {
-			increaseValue()
-			basket.splice(i, 1);
-				localStorage.setItem('basket',JSON.stringify(basket));
-				window.location.reload()
-		}*/
+		document.querySelector('p.totalPriceForm').textContent = "Total price : " + price.innerText
 
 
 		carte.appendChild(divImg);
@@ -136,6 +143,7 @@ function createCard() {
 		divTexte.appendChild(divNumber);
 		divNumber.appendChild(form);
 		divNumber.appendChild(totalPrice);
+		divNumber.appendChild(trashCan);
 		form.appendChild(divFormDecrease);
 		form.appendChild(input);
 		form.appendChild(divFormIncrease);
@@ -162,10 +170,10 @@ function createCard() {
 
 		shopBasket.appendChild(div);
 		div.appendChild(clearBasket);
+		shopBasket.appendChild(formBuy);
 	}
 	
-	
-	shopBasket.appendChild(formBuy);
+
 }
 
 createCard()

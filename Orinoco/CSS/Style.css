@@ -121,12 +121,29 @@ ul {
     transform: translateY(10%);
 }
 
+@media screen and (max-width: 550px) {
+    ul {
+        padding: 0;
+    }
+
+}
+
 li {
     padding: 30px 0px;
 }
 
 .img {
     width: 300px;
+}
+
+.trashCan {
+    color: #dc3545;
+    font-size: 1.3em;
+}
+
+.trashCan:hover {
+    color: #734C6B;
+    cursor: pointer;
 }
 
 .clearBasket {
@@ -159,23 +176,43 @@ li {
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 550px) {
+    .form {
+        justify-content: center;
+    }
+}
 
 .value-button {
     border: 1px solid #ddd;
-    width: 15%;
+    max-width: 20%;
     height: 40px;
-    padding: 8px 0px;
+    padding: 7px 0px;
     text-align: center;
     vertical-align: middle;
     background: #eee;
   }
 
-.number {
-      max-width: 30%;
-      height: 40px;
-      text-align: center;
-      border: solid 1px #ddd;
+  @media screen and (max-width: 550px) {
+    .value-button  {
+        max-width: 10%;
+    }
   }
+
+.number {
+    max-width: 40%;
+    height: 40px;
+    text-align: center;
+    border: solid 1px #ddd;
+    padding-top: 7px;
+          
+  }
+
+  @media screen and (max-width: 550px) {
+    .number {
+        max-width: 20%;
+    }
+  }
+
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -226,7 +263,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 20px 0px 40px;
 }
 
-.totalPrice {
+.totalPriceForm {
     text-align: center;
     font-weight: bold;
     padding-top: 20px;

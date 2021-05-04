@@ -33,6 +33,8 @@ function createCard() {
 	button.className = 'btn btn-danger button';
 	button.href = "Basket.html"
 
+	console.log (detailCamera._id)
+
 	// Achat envoyer dans le panier
 	button.addEventListener ("click", function(){
 
@@ -46,8 +48,19 @@ function createCard() {
 			basket = basket ? JSON.parse(basket) : [];
 
 			// Add new data to localStorage Array
-			basket.push(detailCamera);
+			/*for (let j = 0; j < basket.length; j++) {
+				const basketId = basket[j]._id;
+				alert(basketId)
+				
+				if (detailCamera._id == basketId) {
+				alert("Ce produit est déjà dans le panier");
+				return
+					} else {
+				basket.push(detailCamera);
+					}
+			}*/
 
+			basket.push(detailCamera);
 			// Save back to localStorage
 			localStorage.setItem('basket', JSON.stringify(basket));
 		
