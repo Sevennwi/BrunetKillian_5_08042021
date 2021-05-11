@@ -5,6 +5,9 @@ const formBuy = document.getElementById('formBuy')
 let basket = JSON.parse(localStorage.getItem("basket"))
 
 
+let priceProductArray = []
+
+
 // Creation Cards
 function createCard() {
 
@@ -92,6 +95,19 @@ function createCard() {
 		divFormIncrease.innerText = "+"
 		divFormIncrease.setAttribute("value", "Increase Value")	
 
+		// Prix total
+		priceProductArray.push(priceProduct)
+		let totalPriceProduct = 0
+			for(let j = 0 ; j < priceProductArray.length; j++) { 
+		   
+			totalPriceProduct += priceProductArray[j];
+				}
+
+		console.log(priceProductArray)
+		document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPriceProduct + "€"
+
+
+
 			// Bouton nombre de Produit
 		function increaseValue() {
 			var value = parseInt(input.value, 10);
@@ -103,11 +119,16 @@ function createCard() {
 
 			let totalPricePerProduct = priceProduct * input.value
 			totalPrice.innerText = totalPricePerProduct + '€'
-			let totalPriceForm = 0
-			totalPriceForm = totalPricePerProduct + totalPriceForm
-			console.log(totalPriceForm)
 
-			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPriceForm
+			/*totalPriceForm.push(totalPricePerProduct)
+			if (totalPriceForm.length > 1) {
+				totalPriceForm.shift()
+			}
+			console.log(totalPriceForm)
+			//totalPriceForm = totalPricePerProduct*/
+					
+
+			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPrice.innerText
 		}
 		
 		function decreaseValue() {
@@ -126,14 +147,13 @@ function createCard() {
 
 			let totalPricePerProduct = priceProduct * input.value
 			totalPrice.innerText = totalPricePerProduct + '€'
-			let totalPriceForm = 0
-			totalPriceForm = totalPricePerProduct + totalPriceForm
-			console.log(totalPriceForm)
+			
+			//let totalPriceForm = 0
+			//totalPriceForm = totalPricePerProduct + totalPriceForm
+			//console.log(totalPriceForm)
 
-			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPriceForm
+			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPrice.innerText
 		}
-
-		document.querySelector('p.totalPriceForm').textContent = "Total price : " + price.innerText
 
 
 		carte.appendChild(divImg);
@@ -152,7 +172,7 @@ function createCard() {
 		shopBasket.appendChild(ul);
 		
 
-		}
+	}
 
 	// Boutons en dehors de la liste
 	const div = document.createElement("div")

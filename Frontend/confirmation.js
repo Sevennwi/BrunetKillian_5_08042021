@@ -2,6 +2,8 @@ let confirmation = document.getElementById('confirmation')
 
 let confirmationBasket = JSON.parse(localStorage.getItem("basket"))
 
+let totalPrice = [] 
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(1000);
@@ -53,23 +55,21 @@ function createCard() {
 		confirmation.appendChild(ul);
 
 
-        let totalPrice = [] 
-		totalPrice = Math.ceil (confirmationBasket[i].price / 1000)
-		
+		// Faire un total du prix
+		totalPrice.push( Math.ceil (confirmationBasket[i].price / 1000))
 		console.log(totalPrice)  
-		
 		let totalPriceProduct = 0
 
-				for(let j = 0 ; j < totalPrice.length; j++) { 
+			for(let j = 0 ; j < totalPrice.length; j++) { 
                
 
-				totalPriceProduct += Number(totalPrice[j]);
-				}
+			totalPriceProduct += totalPrice[j];
+			}
 				
 
 
 
-        document.querySelector('p.totalPriceConfirm').textContent = "Total price : " + totalPriceProduct
+        document.querySelector('p.totalPriceConfirm').textContent = "Total price : " + totalPriceProduct + "€"
 
 
     }

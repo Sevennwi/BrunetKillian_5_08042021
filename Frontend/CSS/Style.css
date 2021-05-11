@@ -29,6 +29,10 @@ header {
     color: #734C6B;
 }
 
+.basket:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 1024px) {
     .basket {
         transform: translateX(100%);
@@ -107,7 +111,7 @@ h3 {
 
 #Badge {
 
-    text-align: baseline;
+    text-align: center;
     vertical-align: top;
     font-size: 0.4em;
     transform: translateX(20%);

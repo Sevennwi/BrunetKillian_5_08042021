@@ -48,15 +48,18 @@ function createCard() {
 			basket = basket ? JSON.parse(basket) : [];
 
 			// Add new data to localStorage Array
+			
 			/*for (let j = 0; j < basket.length; j++) {
 				const basketId = basket[j]._id;
-				alert(basketId)
+				alert(detailCamera._id)
+				alert(basketId, detailCamera._id)
 				
 				if (detailCamera._id == basketId) {
 				alert("Ce produit est déjà dans le panier");
-				return
+				break;
 					} else {
 				basket.push(detailCamera);
+				break;
 					}
 			}*/
 
