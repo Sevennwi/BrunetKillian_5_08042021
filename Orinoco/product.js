@@ -33,7 +33,7 @@ function createCard() {
 	button.className = 'btn btn-danger button';
 	button.href = "Basket.html"
 
-	console.log (detailCamera._id)
+	//console.log (detailCamera._id)
 
 	// Achat envoyer dans le panier
 	button.addEventListener ("click", function(){
