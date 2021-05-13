@@ -135,7 +135,7 @@ function createCard() {
 			var value = parseInt(input.value, 10);
 			value = isNaN(value) ? 1 : value;
 			value < 1 ? value = 1 : '';
-			value > 9 ? value = 9 : value;
+			value > 10 ? value = 10 : value;
 			value--;
 			if (value == 0) {
 				basket.splice(i, 1);
