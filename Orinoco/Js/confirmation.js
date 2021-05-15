@@ -16,8 +16,8 @@ let totalPrice = []
 let orderNumber = JSON.parse(localStorage.getItem("orderId"))
 const contact = JSON.parse(localStorage.getItem("contact"));
 
-document.getElementById('firstName').innerHTML = "firstName: " + '<strong>' + contact.firstName + '</strong>'
-document.getElementById('lastName').innerHTML = "lastName: " + '<strong>' + contact.lastName + '</strong>'
+document.getElementById('firstName').innerHTML = "First name: " + '<strong>' + contact.firstName + '</strong>'
+document.getElementById('lastName').innerHTML = "Last name: " + '<strong>' + contact.lastName + '</strong>'
 document.getElementById('Email').innerHTML = "Email: " + '<strong>' + contact.email + '</strong>'
 document.getElementById('Addresse').innerHTML = "Addresse: " + '<strong>' + contact.address + '</strong>'
 document.getElementById('City').innerHTML = "City: " + '<strong>' + contact.city + '</strong>'
