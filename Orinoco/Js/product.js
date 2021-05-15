@@ -49,19 +49,6 @@ function createCard() {
 
 			// Add new data to localStorage Array
 			
-			/*for (let j = 0; j < basket.length; j++) {
-				const basketId = basket[j]._id;
-				alert(detailCamera._id)
-				alert(basketId, detailCamera._id)
-				
-				if (detailCamera._id == basketId) {
-				alert("Ce produit est déjà dans le panier");
-				break;
-					} else {
-				basket.push(detailCamera);
-				break;
-					}
-			}*/
 
 			basket.push(detailCamera);
 			// Save back to localStorage

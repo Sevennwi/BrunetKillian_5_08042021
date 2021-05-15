@@ -118,15 +118,7 @@ function createCard() {
 			input.innerText = value;
 
 			let totalPricePerProduct = priceProduct * input.value
-			totalPrice.innerText = totalPricePerProduct + '€'
-
-			/*totalPriceForm.push(totalPricePerProduct)
-			if (totalPriceForm.length > 1) {
-				totalPriceForm.shift()
-			}
-			console.log(totalPriceForm)
-			//totalPriceForm = totalPricePerProduct*/
-					
+			totalPrice.innerText = totalPricePerProduct + '€'					
 
 			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPrice.innerText
 		}
@@ -148,9 +140,6 @@ function createCard() {
 			let totalPricePerProduct = priceProduct * input.value
 			totalPrice.innerText = totalPricePerProduct + '€'
 			
-			//let totalPriceForm = 0
-			//totalPriceForm = totalPricePerProduct + totalPriceForm
-			//console.log(totalPriceForm)
 
 			document.querySelector('p.totalPriceForm').textContent = "Total price : " + totalPrice.innerText
 		}
@@ -209,5 +198,63 @@ function basketNotif() {
 basketNotif()
 
 
+// Validation formulaire
 
+const validation = document.getElementById('formBuy')
+validation.addEventListener("submit", e => {
+	e.preventDefault();
+	sendForm()
+
+});
+
+	
+// Envoie des données au server
+function sendForm() {
+
+	let firstName = document.getElementById("Firstname").value
+	let lastName = document.getElementById("Lastname").value
+	let address = document.getElementById("Addresse").value
+	let city = document.getElementById("City").value
+	let email = document.getElementById("Email").value
+
+	let contact = {firstName, lastName, address, city, email}
+
+	let products = []
+	JSON.parse(localStorage.getItem("basket")).forEach((produit) =>{
+    	products.push(produit._id); 
+	});
+
+	let objet = {contact, products}
+
+	//console.log(objet)
+
+	let contactItems = JSON.stringify(objet);
+
+	postOrder(contactItems);
+
+}
+
+// Récupération des informations contact et orderId
+function postOrder(contactItems) {
+
+    fetch("http://localhost:3000/api/cameras/order", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode:'cors',
+        body: contactItems
+    }).then(response => {
+
+        return response.json();
+
+    }).then( r => {
+        localStorage.setItem('contact', JSON.stringify(r.contact));
+        localStorage.setItem('orderId', JSON.stringify(r.orderId));
+		window.location.replace("./confirmation.html");
+    })
+    .catch(function(error) {
+		console.log(error)
+	  })
+}
 

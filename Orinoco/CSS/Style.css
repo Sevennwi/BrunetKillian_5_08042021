@@ -318,6 +318,26 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 0px;
 }
 
+.confirmCoor {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 50px 0px;
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.Coor {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
+.liCoor {
+    list-style-type: none;
+}
+
 
 /* Footer */
 

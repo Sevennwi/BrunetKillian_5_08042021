@@ -4,18 +4,25 @@ let confirmationBasket = JSON.parse(localStorage.getItem("basket"))
 
 let totalPrice = [] 
 
-
-function getRandomInt(min, max) {
+// Ancien générateur d'Id
+/*function getRandomInt(min, max) {
     min = Math.ceil(1000);
     max = Math.floor(8000);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+}*/
 
 
 
+let orderNumber = JSON.parse(localStorage.getItem("orderId"))
+const contact = JSON.parse(localStorage.getItem("contact"));
 
+document.getElementById('firstName').innerHTML = "firstName: " + '<strong>' + contact.firstName + '</strong>'
+document.getElementById('lastName').innerHTML = "lastName: " + '<strong>' + contact.lastName + '</strong>'
+document.getElementById('Email').innerHTML = "Email: " + '<strong>' + contact.email + '</strong>'
+document.getElementById('Addresse').innerHTML = "Addresse: " + '<strong>' + contact.address + '</strong>'
+document.getElementById('City').innerHTML = "City: " + '<strong>' + contact.city + '</strong>'
 
-document.querySelector('p.orderNumber').textContent = "Command number : " + getRandomInt();
+document.querySelector('p.orderNumber').textContent = "Command number : " + orderNumber;
 
 
 
@@ -78,3 +85,5 @@ function createCard() {
 }
 
 createCard()
+
+
